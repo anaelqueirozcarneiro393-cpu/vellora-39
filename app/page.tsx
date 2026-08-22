@@ -21,6 +21,7 @@ const services = [
   ['Landing Pages para Tráfego Pago', 'Páginas desenvolvidas para campanhas de Meta Ads, TikTok Ads, Google Ads e outras fontes de tráfego.'],
   ['Sites para Negócios Locais', 'Uma presença digital profissional para empresas que querem fortalecer sua marca e facilitar o contato com clientes.'],
   ['Cardápios Digitais', 'Transforme seu cardápio tradicional em uma experiência digital moderna e responsiva.'],
+  ['Presença Digital Completa', 'Uma experiência digital profissional que conecta sua marca, seus serviços, seus canais de contato e seus clientes em um único lugar.'],
 ]
 const benefits = [
   ['Mais profissionalismo', 'Seu negócio passa uma imagem mais moderna e confiável.'],
