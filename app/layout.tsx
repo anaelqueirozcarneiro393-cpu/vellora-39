@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pt_BR',
     siteName: 'Vellora',
-    images: [{ url: '/og-vellora.png', width: 1200, height: 630, alt: 'Vellora — Landing Pages e Experiências Digitais' }],
+    images: [{ url: '/og-vellora.png', width: 1254, height: 1254, alt: 'Vellora — Landing Pages e Experiências Digitais' }],
   },
   twitter: { card: 'summary_large_image', title: 'Vellora | Landing Pages e Experiências Digitais', description: 'Landing pages e experiências digitais profissionais para negócios.', images: ['/og-vellora.png'] },
-  icons: { icon: [{ url: '/favicon.ico', sizes: 'any' }, { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' }, { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' }, { url: '/icon.svg', type: 'image/svg+xml' }, { url: '/vellora-icon-512.png', sizes: '512x512', type: 'image/png' }], apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }] },
+  icons: { icon: [{ url: '/favicon.png', sizes: '1254x1254', type: 'image/png' }, { url: '/favicon.ico', sizes: 'any' }, { url: '/icon.svg', type: 'image/svg+xml' }], apple: [{ url: '/apple-touch-icon.png', sizes: '1254x1254', type: 'image/png' }] },
 }
 
 export const viewport: Viewport = { colorScheme: 'dark', themeColor: '#121212', userScalable: true }
