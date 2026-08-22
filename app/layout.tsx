@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Vellora | Landing Pages e Cardápios Digitais Profissionais',
-  description: 'Transforme seu negócio com uma presença digital profissional. A Vellora cria landing pages, sites e cardápios digitais modernos, rápidos e responsivos.',
+  title: 'Vellora | Landing Pages e Experiências Digitais Profissionais',
+  description: 'A Vellora cria landing pages, sites e experiências digitais profissionais para empresas, empreendedores e negócios que querem transformar sua presença online.',
   generator: 'Vellora',
   openGraph: {
     title: 'Vellora | Experiências digitais profissionais',
