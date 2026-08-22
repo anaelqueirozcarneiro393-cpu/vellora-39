@@ -37,6 +37,9 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
 .form-input { min-height: 52px; width:100%; border: 1px solid var(--border); background: transparent; padding: 0 16px; color: var(--foreground); outline:none; font: inherit; font-size: .875rem; border-radius: 2px; }
 .form-input:focus { border-color: var(--foreground); }
 .form-input::placeholder { color: var(--muted-foreground); }
+select.form-input { color-scheme: dark; cursor: pointer; }
+select.form-input option { background: var(--card); color: var(--card-foreground); }
+select.form-input option:disabled { color: var(--muted-foreground); }
 .whatsapp-float { position:fixed; right:20px; bottom:20px; z-index:45; display:flex; align-items:center; gap:10px; border:1px solid var(--border); background:var(--foreground); color:var(--background); border-radius:999px; padding:14px 18px; font-size:12px; font-weight:600; box-shadow:0 12px 30px -15px #000; transition: transform .25s ease, box-shadow .25s ease; }
 .whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -12px #000; }
 .pulse-dot-ring { position:absolute; inset:0; border-radius:999px; border:1px solid var(--foreground); opacity:0; animation: pulse-ring 2.6s ease-out infinite; pointer-events:none; }
