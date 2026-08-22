@@ -1,49 +1,22 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+  title: 'Vellora | Landing Pages e Cardápios Digitais Profissionais',
+  description: 'Transforme seu negócio com uma presença digital profissional. A Vellora cria landing pages, sites e cardápios digitais modernos, rápidos e responsivos.',
+  generator: 'Vellora',
+  openGraph: {
+    title: 'Vellora | Experiências digitais profissionais',
+    description: 'Transformamos negócios locais em experiências digitais profissionais.',
+    type: 'website',
+    locale: 'pt_BR',
+    images: [{ url: '/vellora-logo.png', width: 1200, height: 630, alt: 'Vellora' }],
   },
+  icons: { icon: '/vellora-logo.png', apple: '/vellora-logo.png' },
 }
 
-export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
-}
+export const viewport: Viewport = { colorScheme: 'dark', themeColor: '#121212', userScalable: true }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="en">
-      <body className="antialiased">
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
-      </body>
-    </html>
-  )
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="pt-BR" className="bg-background"><body className="antialiased">{children}</body></html>
 }
