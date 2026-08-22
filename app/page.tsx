@@ -43,7 +43,7 @@ const faqs = [
 
 function Logo({ compact = false, light = false }: { compact?: boolean; light?: boolean }) {
   const size = compact ? 'text-2xl' : 'text-3xl'
-  return <div className="flex items-center gap-2.5"><span aria-hidden="true" className={`font-serif ${size} font-medium leading-none transition-all duration-300 group-hover:scale-110 ${light ? 'text-background group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.55)]' : 'text-foreground group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]'}`}>V</span><span className="font-mono text-sm font-bold tracking-[0.35em]">VELLORA</span></div>
+  return <div className="flex items-center gap-2.5"><span aria-hidden="true" className={`font-serif ${size} font-medium leading-none transition-all duration-300 group-hover:scale-110 ${light ? 'text-background group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.55)]' : 'text-foreground group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]'}`}>V</span><span className="font-mono text-sm font-bold tracking-[0.35em]">ELLORA</span></div>
 }
 function Button({ children, onClick, outline = false, href }: { children: React.ReactNode; onClick?: () => void; outline?: boolean; href?: string }) {
   const cls = `btn-press relative inline-flex min-h-12 items-center justify-center gap-3 overflow-hidden rounded-full px-6 text-sm font-semibold transition-all duration-300 ${outline ? 'border border-border bg-transparent text-foreground hover:border-foreground/40 hover:bg-accent' : 'shine bg-foreground text-background hover:-translate-y-0.5 hover:shadow-[0_14px_36px_-12px_var(--foreground)]'}`
