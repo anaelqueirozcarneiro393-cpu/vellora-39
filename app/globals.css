@@ -67,5 +67,15 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
 
 @keyframes pulse-ring { 0% { opacity:.55; transform:scale(.7); } 70% { opacity:0; transform:scale(1.9); } 100% { opacity:0; transform:scale(1.9); } }
 @media (max-width: 640px) { .phone-mockup { width:145px; height:295px; } .hero-visual { min-height:300px; } .phone-float { right:-2%; bottom:-15px; } .whatsapp-float { right:14px; bottom:74px; padding:14px; } .whatsapp-float span { display:none; } .portfolio-placeholder { height:180px; } .mobile-cta { display:block; position:fixed; z-index:40; inset:auto 0 0; padding:10px; background:color-mix(in oklch, var(--background) 90%, transparent); backdrop-filter:blur(14px); border-top:1px solid var(--border); } .mobile-cta button { min-height:48px; width:100%; display:flex; align-items:center; justify-content:center; gap:10px; border-radius:999px; background:var(--foreground); color:var(--background); font-size:13px; font-weight:600; } }
-@media (prefers-reduced-motion: no-preference) { .hero-visual, section > div { animation: reveal .7s ease both; } }
-@keyframes reveal { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.reveal-section { opacity: 0; transform: translateY(24px); transition: opacity .8s ease var(--reveal-delay, 0ms), transform .8s cubic-bezier(.16,1,.3,1) var(--reveal-delay, 0ms); }
+.reveal-section.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-section .card-glow, .reveal-section .portfolio-slot { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s cubic-bezier(.16,1,.3,1), box-shadow .35s ease; }
+.reveal-section.is-visible .card-glow, .reveal-section.is-visible .portfolio-slot { opacity: 1; transform: translateY(0); }
+.reveal-section.is-visible .card-glow:nth-child(2), .reveal-section.is-visible .portfolio-slot:nth-child(2) { transition-delay: 80ms; }
+.reveal-section.is-visible .card-glow:nth-child(3), .reveal-section.is-visible .portfolio-slot:nth-child(3) { transition-delay: 160ms; }
+.reveal-section.is-visible .card-glow:nth-child(4) { transition-delay: 240ms; }
+.nav-scrolled { background: color-mix(in oklch, var(--background) 94%, transparent); box-shadow: 0 14px 40px -28px rgba(0,0,0,.9); }
+.hero-visual { animation: float-mockup 6s ease-in-out infinite; }
+@keyframes float-mockup { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-7px) rotate(.35deg); } }
+@media (max-width: 640px) { .hero-visual { animation-duration: 8s; } .reveal-section { transform: translateY(14px); transition-duration: .6s; } .reveal-section .card-glow, .reveal-section .portfolio-slot { transform: translateY(10px); transition-duration: .5s; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; } .reveal-section, .reveal-section .card-glow, .reveal-section .portfolio-slot { opacity: 1 !important; transform: none !important; } }
