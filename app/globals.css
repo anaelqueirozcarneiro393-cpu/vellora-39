@@ -34,9 +34,14 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
 .phone-screen { height:100%; overflow:hidden; padding: 19px 7px 7px; font-family: Arial, sans-serif; }
 .portfolio-slot { border: 1px solid var(--border); padding: 16px; }
 .portfolio-placeholder { height: 270px; display:flex; flex-direction:column; align-items:center; justify-content:center; border:1px dashed var(--border); color: var(--muted-foreground); background: linear-gradient(135deg, transparent 49%, rgba(255,255,255,.025) 50%, transparent 51%); }
-.form-input { min-height: 52px; width:100%; border: 1px solid var(--border); background: transparent; padding: 0 16px; color: var(--foreground); outline:none; font: inherit; font-size: .875rem; border-radius: 2px; }
-.form-input:focus { border-color: var(--foreground); }
-.form-input::placeholder { color: var(--muted-foreground); }
+.briefing-form { padding: 1.25rem; border: 1px solid var(--border); background: color-mix(in oklch, var(--card) 42%, transparent); transition: border-color .35s ease, box-shadow .35s ease, background .35s ease; }
+.briefing-form:focus-within { border-color: color-mix(in oklch, var(--foreground) 48%, var(--border)); background: color-mix(in oklch, var(--card) 68%, transparent); box-shadow: 0 22px 55px -38px color-mix(in oklch, var(--foreground) 55%, transparent); }
+.form-input { min-height: 52px; width:100%; border: 1px solid var(--border); background: color-mix(in oklch, var(--background) 55%, transparent); padding: 0 16px; color: var(--foreground); outline:none; font: inherit; font-size: .875rem; border-radius: 2px; transition: border-color .3s ease, background .3s ease, transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease; }
+.form-input:focus { border-color: var(--foreground); background: var(--background); transform: translateY(-2px); box-shadow: 0 9px 22px -18px color-mix(in oklch, var(--foreground) 80%, transparent); animation: field-focus .45s cubic-bezier(.16,1,.3,1); }
+.form-input:valid:not(:placeholder-shown) { border-color: color-mix(in oklch, var(--foreground) 35%, var(--border)); }
+.form-input::placeholder { color: var(--muted-foreground); transition: color .25s ease, transform .25s ease; }
+.form-input:focus::placeholder { color: color-mix(in oklch, var(--muted-foreground) 65%, transparent); transform: translateX(4px); }
+@keyframes field-focus { 0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--foreground) 25%, transparent); } 100% { box-shadow: 0 9px 22px -18px color-mix(in oklch, var(--foreground) 80%, transparent); } }
 select.form-input { color-scheme: dark; cursor: pointer; }
 select.form-input option { background: var(--card); color: var(--card-foreground); }
 select.form-input option:disabled { color: var(--muted-foreground); }
@@ -69,7 +74,7 @@ select.form-input option:disabled { color: var(--muted-foreground); }
 .portfolio-placeholder { transition: background-position .6s ease; }
 
 @keyframes pulse-ring { 0% { opacity:.55; transform:scale(.7); } 70% { opacity:0; transform:scale(1.9); } 100% { opacity:0; transform:scale(1.9); } }
-@media (max-width: 640px) { .phone-mockup { width:145px; height:295px; } .hero-visual { min-height:300px; } .phone-float { right:-2%; bottom:-15px; } .whatsapp-float { right:14px; bottom:74px; padding:14px; } .whatsapp-float span { display:none; } .portfolio-placeholder { height:180px; } .mobile-cta { display:block; position:fixed; z-index:40; inset:auto 0 0; padding:10px; background:color-mix(in oklch, var(--background) 90%, transparent); backdrop-filter:blur(14px); border-top:1px solid var(--border); } .mobile-cta button { min-height:48px; width:100%; display:flex; align-items:center; justify-content:center; gap:10px; border-radius:999px; background:var(--foreground); color:var(--background); font-size:13px; font-weight:600; } }
+@media (max-width: 640px) { .briefing-form { padding: .875rem; } .phone-mockup { width:145px; height:295px; } .hero-visual { min-height:300px; } .phone-float { right:-2%; bottom:-15px; } .whatsapp-float { right:14px; bottom:74px; padding:14px; } .whatsapp-float span { display:none; } .portfolio-placeholder { height:180px; } .mobile-cta { display:block; position:fixed; z-index:40; inset:auto 0 0; padding:10px; background:color-mix(in oklch, var(--background) 90%, transparent); backdrop-filter:blur(14px); border-top:1px solid var(--border); } .mobile-cta button { min-height:48px; width:100%; display:flex; align-items:center; justify-content:center; gap:10px; border-radius:999px; background:var(--foreground); color:var(--background); font-size:13px; font-weight:600; } }
 .reveal-section { opacity: 0; transform: translateY(24px); transition: opacity .8s ease var(--reveal-delay, 0ms), transform .8s cubic-bezier(.16,1,.3,1) var(--reveal-delay, 0ms); }
 .reveal-section.is-visible { opacity: 1; transform: translateY(0); }
 .reveal-section .card-glow, .reveal-section .portfolio-slot { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s cubic-bezier(.16,1,.3,1), box-shadow .35s ease; }
