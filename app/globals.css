@@ -97,6 +97,8 @@ select.form-input option:disabled { color: var(--muted-foreground); }
 #inicio .btn-press svg { transition: transform .3s cubic-bezier(.16,1,.3,1); }
 #inicio .btn-press:hover svg { transform: translate(3px, -3px); }
 #portfolio .stream-card { transition: filter .35s ease; }
+#portfolio.portfolio-glow { box-shadow: inset 0 1px 0 color-mix(in oklch, var(--foreground) 10%, transparent), 0 0 70px -48px color-mix(in oklch, var(--foreground) 45%, transparent); }
+#portfolio.portfolio-glow h2, #portfolio.portfolio-glow > div > p { text-shadow: 0 0 28px color-mix(in oklch, var(--foreground) 18%, transparent); }
 #portfolio .stream-card:hover { filter: brightness(1.1); }
 footer a { transition: color .25s ease; }
 footer a:hover { color: var(--background); }
