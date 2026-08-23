@@ -106,7 +106,7 @@ footer a { transition: color .25s ease; }
 footer a:hover { color: var(--background); }
 .hero-visual { animation: float-mockup 6s ease-in-out infinite; }
 @keyframes float-mockup { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-7px) rotate(.35deg); } }
-@media (max-width: 640px) { .hero-visual { animation-duration: 8s; } .reveal-section { transform: translateY(14px); transition-duration: .6s; } .reveal-section .card-glow, .reveal-section .portfolio-slot { transform: translateY(10px); transition-duration: .5s; } .stream-card { width: 82cqw !important; height: 82cqw !important; } }
+@media (max-width: 640px) { .hero-visual { animation-duration: 8s; } .reveal-section { transform: translateY(14px); transition-duration: .6s; } .reveal-section .card-glow, .reveal-section .portfolio-slot { transform: translateY(10px); transition-duration: .5s; } .stream-card { width: 82cqw !important; height: 82cqw !important; aspect-ratio: 1; } }
 /* Estrutura mais direta para conversão: mantém proposta, soluções, prova, processo e briefing. */
 main > section:nth-of-type(2), main > section:nth-of-type(3), main > section:nth-of-type(4), main > section:nth-of-type(5), main > section:nth-of-type(7), main > section:nth-of-type(8), main > section:nth-of-type(9), main > section:nth-of-type(10), main > section:nth-of-type(13) { display: none; }
 main > section:nth-of-type(1), main > section:nth-of-type(6), main > section:nth-of-type(12), main > section:nth-of-type(14), main > section:nth-of-type(15), main > section:nth-of-type(16) { padding-top: 3rem; padding-bottom: 3rem; }
