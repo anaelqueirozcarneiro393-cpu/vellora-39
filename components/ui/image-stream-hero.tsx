@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 export type CorridorPath = { perspective?: number; cardWidth?: number; cardHeight?: number; cardRadius?: number; birthHeight?: number; exitHeight?: number; railBirth?: number; railExit?: number; fan?: number; turnBirth?: number; turnExit?: number; stops?: number }
@@ -46,7 +47,7 @@ export function ImageStreamHero({ images, cards = 7, speed = 30, axis = 55, path
         <div className="absolute inset-0 [transform-style:preserve-3d]">
           {[1, -1].map((direction) => Array.from({ length: cards }, (_, index) => {
             const image = images[index % images.length]
-            return <div key={`${direction}-${index}`} className={`${cardClass} absolute left-1/2 top-1/2 overflow-hidden border border-border/50 bg-muted shadow-2xl`} style={{ width: `${corridor.cardWidth}cqw`, height: `${corridor.cardHeight}cqw`, marginLeft: `${-corridor.cardWidth / 2}cqw`, marginTop: `${-corridor.cardHeight / 2}cqw`, borderRadius: `${corridor.cardRadius}cqw`, animation: `${direction === 1 ? right : left} ${speed}s linear infinite`, animationDelay: `${-(index * speed) / cards}s`, transformOrigin: direction === 1 ? "left center" : "right center", backfaceVisibility: "hidden" }}><img src={image.src} alt={image.alt ?? ""} loading="lazy" decoding="async" className="size-full object-cover" draggable={false} /></div>
+            return <div key={`${direction}-${index}`} className={`${cardClass} absolute left-1/2 top-1/2 overflow-hidden border border-border/50 bg-muted shadow-2xl`} style={{ width: `${corridor.cardWidth}cqw`, height: `${corridor.cardHeight}cqw`, marginLeft: `${-corridor.cardWidth / 2}cqw`, marginTop: `${-corridor.cardHeight / 2}cqw`, borderRadius: `${corridor.cardRadius}cqw`, animation: `${direction === 1 ? right : left} ${speed}s linear infinite`, animationDelay: `${-(index * speed) / cards}s`, transformOrigin: direction === 1 ? "left center" : "right center", backfaceVisibility: "hidden" }}><Image src={image.src} alt={image.alt ?? ""} fill sizes="(max-width: 640px) 42vw, (max-width: 1024px) 24vw, 240px" quality={72} loading="lazy" className="object-cover" draggable={false} /></div>
           }))}
         </div>
       </div>
