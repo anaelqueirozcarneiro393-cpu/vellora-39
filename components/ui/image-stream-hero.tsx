@@ -17,7 +17,7 @@ type ImageStreamHeroProps = React.ComponentProps<"div"> & {
   children?: React.ReactNode
 }
 
-const DEFAULT_PATH: Required<CorridorPath> = { perspective: 30, cardWidth: 21, cardHeight: 28, cardRadius: 0.4, birthHeight: 10, exitHeight: 34, railBirth: -14, railExit: 36, fan: 1.8, turnBirth: 4, turnExit: 20, stops: 36 }
+const DEFAULT_PATH: Required<CorridorPath> = { perspective: 30, cardWidth: 21, cardHeight: 28, cardRadius: 0.4, birthHeight: 10, exitHeight: 34, railBirth: -14, railExit: 36, fan: 1.8, turnBirth: 0, turnExit: 0, stops: 36 }
 
 function makeKeyframes(direction: 1 | -1, name: string, path: Required<CorridorPath>) {
   const stops = Array.from({ length: path.stops + 1 }, (_, index) => {
