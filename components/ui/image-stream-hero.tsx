@@ -17,16 +17,16 @@ type ImageStreamHeroProps = React.ComponentProps<"div"> & {
   children?: React.ReactNode
 }
 
-const DEFAULT_PATH: Required<CorridorPath> = { perspective: 30, cardWidth: 21, cardHeight: 28, cardRadius: 0.4, birthHeight: 19, exitHeight: 28, railBirth: 8, railExit: 34, fan: 1.35, turnBirth: 0, turnExit: 0, stops: 36 }
+const DEFAULT_PATH: Required<CorridorPath> = { perspective: 30, cardWidth: 21, cardHeight: 28, cardRadius: 0.4, birthHeight: 19, exitHeight: 28, railBirth: 4, railExit: 42, fan: 1.15, turnBirth: 0, turnExit: 0, stops: 36 }
 
 function makeKeyframes(direction: 1 | -1, name: string, path: Required<CorridorPath>) {
   const stops = Array.from({ length: path.stops + 1 }, (_, index) => {
     const progress = index / path.stops
-    const scale = 0.68 + 0.32 * (1 - Math.pow(1 - progress, 1.15))
+    const scale = 0.92 + 0.08 * progress
     const z = path.perspective * (1 - 1 / scale)
     const rail = path.railExit - (path.railExit - path.railBirth) * Math.pow(1 - progress, path.fan)
     const turn = path.turnBirth + (path.turnExit - path.turnBirth) * progress
-    const opacity = progress < 0.1 ? progress / 0.1 : progress > 0.88 ? (1 - progress) / 0.12 : 1
+    const opacity = progress < 0.06 ? progress / 0.06 : progress > 0.96 ? (1 - progress) / 0.04 : 1
     return `${(progress * 100).toFixed(2)}%{opacity:${Math.max(0, Math.min(1, opacity)).toFixed(2)};transform:translate3d(${(direction * rail).toFixed(2)}cqw,0,${z.toFixed(2)}cqw) scale(${scale.toFixed(3)}) rotateY(${(-direction * turn).toFixed(2)}deg)}`
   }).join("")
   return `@keyframes ${name}{${stops}}`
