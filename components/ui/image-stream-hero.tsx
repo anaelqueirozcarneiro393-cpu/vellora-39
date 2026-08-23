@@ -45,9 +45,8 @@ export function ImageStreamHero({ images, cards = 7, speed = 30, axis = 55, path
       <style>{`${keyframes}@media(prefers-reduced-motion:reduce){.${cardClass}{animation-play-state:paused}}`}</style>
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 [perspective:30cqw]">
         <div className="absolute inset-0 [transform-style:preserve-3d]">
-          {[1, -1].map((direction) => Array.from({ length: cards }, (_, index) => {
-            const image = images[index % images.length]
-            return <div key={`${direction}-${index}`} className={`${cardClass} absolute left-1/2 top-1/2 overflow-hidden border border-border/50 bg-muted shadow-2xl`} style={{ width: `${corridor.cardWidth}cqw`, height: `${corridor.cardHeight}cqw`, marginLeft: `${-corridor.cardWidth / 2}cqw`, marginTop: `${-corridor.cardHeight / 2}cqw`, borderRadius: `${corridor.cardRadius}cqw`, animation: `${direction === 1 ? right : left} ${speed}s linear infinite`, animationDelay: `${-(index * speed) / cards}s`, transformOrigin: direction === 1 ? "left center" : "right center", backfaceVisibility: "hidden" }}><Image src={image.src} alt={image.alt ?? ""} fill sizes="(max-width: 640px) 42vw, (max-width: 1024px) 24vw, 240px" quality={72} loading="lazy" className="object-cover" draggable={false} /></div>
+          {[1, -1].map((direction) => images.map((image, index) => {
+            return <div key={`${direction}-${index}`} className={`${cardClass} absolute left-1/2 top-1/2 overflow-hidden border border-border/50 bg-muted shadow-2xl`} style={{ width: `${corridor.cardWidth}cqw`, height: `${corridor.cardHeight}cqw`, marginLeft: `${-corridor.cardWidth / 2}cqw`, marginTop: `${-corridor.cardHeight / 2}cqw`, borderRadius: `${corridor.cardRadius}cqw`, animation: `${direction === 1 ? right : left} ${speed}s linear infinite`, animationDelay: `${-(index * speed) / images.length}s`, transformOrigin: direction === 1 ? "left center" : "right center", backfaceVisibility: "hidden" }}><Image src={image.src} alt={image.alt ?? ""} fill sizes="(max-width: 640px) 42vw, (max-width: 1024px) 24vw, 240px" quality={72} loading="lazy" className="object-cover" draggable={false} /></div>
           }))}
         </div>
       </div>
