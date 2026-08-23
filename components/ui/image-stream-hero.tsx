@@ -25,12 +25,13 @@ function makeKeyframes(direction: 1 | -1, name: string, path: Required<CorridorP
     const z = path.perspective * (1 - 1 / scale)
     const rail = path.railExit - (path.railExit - path.railBirth) * Math.pow(1 - progress, path.fan)
     const turn = path.turnBirth + (path.turnExit - path.turnBirth) * progress
-    return `${(progress * 100).toFixed(2)}%{transform:translate3d(${(direction * rail).toFixed(2)}cqw,0,${z.toFixed(2)}cqw) rotateY(${(-direction * turn).toFixed(2)}deg)}`
+    const opacity = progress < 0.08 ? progress / 0.08 : progress > 0.94 ? (1 - progress) / 0.06 : 1
+    return `${(progress * 100).toFixed(2)}%{opacity:${Math.max(0, Math.min(1, opacity)).toFixed(2)};transform:translate3d(${(direction * rail).toFixed(2)}cqw,0,${z.toFixed(2)}cqw) scale(${scale.toFixed(3)}) rotateY(${(-direction * turn).toFixed(2)}deg)}`
   }).join("")
   return `@keyframes ${name}{${stops}}`
 }
 
-export function ImageStreamHero({ images, cards = 9, speed = 18, axis = 55, path, children, className, ...props }: ImageStreamHeroProps) {
+export function ImageStreamHero({ images, cards = 14, speed = 22, axis = 55, path, children, className, ...props }: ImageStreamHeroProps) {
   const id = React.useId().replace(/[^a-zA-Z0-9]/g, "")
   const right = `stream-right-${id}`
   const left = `stream-left-${id}`
