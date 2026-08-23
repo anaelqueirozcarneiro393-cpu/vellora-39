@@ -16,7 +16,7 @@ type ImageStreamHeroProps = React.ComponentProps<"div"> & {
   children?: React.ReactNode
 }
 
-const DEFAULT_PATH: Required<CorridorPath> = { perspective: 30, cardWidth: 18, cardHeight: 25, cardRadius: 0.4, birthHeight: 10, exitHeight: 36, railBirth: -13, railExit: 38, fan: 1.8, turnBirth: 4, turnExit: 22, stops: 36 }
+const DEFAULT_PATH: Required<CorridorPath> = { perspective: 30, cardWidth: 21, cardHeight: 28, cardRadius: 0.4, birthHeight: 10, exitHeight: 34, railBirth: -14, railExit: 36, fan: 1.8, turnBirth: 4, turnExit: 20, stops: 36 }
 
 function makeKeyframes(direction: 1 | -1, name: string, path: Required<CorridorPath>) {
   const stops = Array.from({ length: path.stops + 1 }, (_, index) => {
@@ -31,7 +31,7 @@ function makeKeyframes(direction: 1 | -1, name: string, path: Required<CorridorP
   return `@keyframes ${name}{${stops}}`
 }
 
-export function ImageStreamHero({ images, cards = 14, speed = 22, axis = 55, path, children, className, ...props }: ImageStreamHeroProps) {
+export function ImageStreamHero({ images, cards = 7, speed = 30, axis = 55, path, children, className, ...props }: ImageStreamHeroProps) {
   const id = React.useId().replace(/[^a-zA-Z0-9]/g, "")
   const right = `stream-right-${id}`
   const left = `stream-left-${id}`
