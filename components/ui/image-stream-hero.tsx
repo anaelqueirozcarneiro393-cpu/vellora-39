@@ -17,7 +17,7 @@ type ImageStreamHeroProps = React.ComponentProps<"div"> & {
   children?: React.ReactNode
 }
 
-const DEFAULT_PATH: Required<CorridorPath> = { perspective: 30, cardWidth: 24, cardHeight: 31, cardRadius: 0.4, birthHeight: 19, exitHeight: 28, railBirth: -58, railExit: 78, fan: 1.15, turnBirth: 0, turnExit: 0, stops: 36 }
+const DEFAULT_PATH: Required<CorridorPath> = { perspective: 30, cardWidth: 30, cardHeight: 30, cardRadius: 0.4, birthHeight: 19, exitHeight: 28, railBirth: -58, railExit: 78, fan: 1.15, turnBirth: 0, turnExit: 0, stops: 36 }
 
 function makeKeyframes(name: string, path: Required<CorridorPath>) {
   const stops = Array.from({ length: path.stops + 1 }, (_, index) => {
@@ -40,12 +40,12 @@ export function ImageStreamHero({ images, cards = 7, speed = 30, axis = 55, path
   const keyframes = React.useMemo(() => makeKeyframes(right, corridor), [corridor, right])
 
   return (
-    <div className={cn("relative h-[360px] overflow-hidden bg-background sm:h-[460px]", className)} {...props}>
+    <div className={cn("relative aspect-square w-full overflow-hidden bg-background sm:aspect-auto sm:h-[360px]", className)} {...props}>
       <style>{`${keyframes}@media(prefers-reduced-motion:reduce){.${cardClass}{animation-play-state:paused}}`}</style>
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 [perspective:30cqw]">
         <div className="absolute inset-0 [transform-style:preserve-3d]">
           {[0, 1].map((track) => images.map((image, index) => {
-            return <div key={`${track}-${index}`} className={`${cardClass} absolute left-1/2 top-1/2 overflow-hidden border border-border/50 bg-muted shadow-2xl`} style={{ width: `${corridor.cardWidth}cqw`, height: `${corridor.cardHeight}cqw`, marginLeft: `${-corridor.cardWidth / 2}cqw`, marginTop: `${-corridor.cardHeight / 2}cqw`, borderRadius: `${corridor.cardRadius}cqw`, animation: `${right} ${speed}s linear infinite`, animationDelay: `${-((index + track * images.length) * speed) / (images.length * 0.82)}s`, transformOrigin: "center center", backfaceVisibility: "hidden" }}><Image src={image.src} alt={image.alt ?? ""} fill sizes="(max-width: 640px) 42vw, (max-width: 1024px) 24vw, 240px" quality={72} loading="lazy" className="object-cover" draggable={false} /></div>
+            return <div key={`${track}-${index}`} className={`${cardClass} stream-card absolute left-1/2 top-1/2 overflow-hidden border-transparent bg-transparent shadow-2xl`} style={{ width: `${corridor.cardWidth}cqw`, height: `${corridor.cardHeight}cqw`, marginLeft: `${-corridor.cardWidth / 2}cqw`, marginTop: `${-corridor.cardHeight / 2}cqw`, borderRadius: `${corridor.cardRadius}cqw`, animation: `${right} ${speed}s linear infinite`, animationDelay: `${-((index + track * images.length) * speed) / (images.length * 0.82)}s`, transformOrigin: "center center", backfaceVisibility: "hidden" }}><Image src={image.src} alt={image.alt ?? ""} fill sizes="(max-width: 640px) 42vw, (max-width: 1024px) 24vw, 240px" quality={72} loading="lazy" className="object-cover" draggable={false} /></div>
           }))}
         </div>
       </div>
