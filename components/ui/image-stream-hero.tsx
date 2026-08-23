@@ -40,7 +40,7 @@ export function ImageStreamHero({ images, cards = 7, speed = 30, axis = 55, path
   const keyframes = React.useMemo(() => makeKeyframes(right, corridor), [corridor, right])
 
   return (
-    <div className={cn("relative h-[360px] overflow-hidden bg-background sm:h-[460px]", className)} {...props}>
+    <div className={cn("relative h-[500px] overflow-hidden bg-background sm:h-[460px]", className)} {...props}>
       <style>{`${keyframes}@media(prefers-reduced-motion:reduce){.${cardClass}{animation-play-state:paused}}`}</style>
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 [perspective:30cqw]">
         <div className="absolute inset-0 [transform-style:preserve-3d]">
