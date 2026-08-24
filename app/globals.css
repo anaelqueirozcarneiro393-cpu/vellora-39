@@ -41,6 +41,21 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
   @keyframes phone-float { 0%, 100% { transform: rotate(-7deg) translateY(0); } 50% { transform: rotate(-5deg) translateY(-10px); } }
   @keyframes phone-glow { 0%, 100% { filter: drop-shadow(0 25px 30px #000); } 50% { filter: drop-shadow(0 30px 38px color-mix(in oklch, #000 82%, transparent)); } }
   @keyframes phone-shimmer { 0%, 58%, 100% { transform: translateX(-130%); } 78% { transform: translateX(130%); } }
+.phone-float { transition: filter .4s ease; }
+.phone-float:hover { animation-play-state: paused; filter: drop-shadow(0 32px 42px #000); }
+.phone-float:hover .phone-mockup { animation-play-state: paused; transform: rotate(2deg) scale(1.045); box-shadow: 0 0 0 1px #555, inset 0 0 0 1px #111, 0 20px 34px -18px color-mix(in oklch, var(--foreground) 40%, transparent); transition: transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s ease; }
+.phone-float:hover .phone-screen::after { animation-duration: 1.8s; }
+.experience-conversion-card { overflow: hidden; isolation: isolate; animation: conversion-card-in 900ms cubic-bezier(.16,1,.3,1) both; }
+.experience-conversion-card::before { content: ''; position: absolute; inset: auto -20% -45%; height: 70%; background: radial-gradient(ellipse, color-mix(in oklch, var(--foreground) 10%, transparent), transparent 68%); opacity: .45; transform: translateY(35%); transition: transform .6s cubic-bezier(.16,1,.3,1), opacity .6s ease; pointer-events: none; }
+.experience-conversion-card:hover::before { transform: translateY(0); opacity: .8; }
+.experience-conversion-card h3, .experience-conversion-card li { position: relative; z-index: 1; }
+.experience-conversion-card:hover h3 { letter-spacing: .01em; }
+.experience-conversion-card li { transition: transform .35s cubic-bezier(.16,1,.3,1), color .35s ease; }
+.experience-conversion-card:hover li { transform: translateX(5px); }
+.experience-conversion-card:hover li:nth-child(2) { transition-delay: 40ms; }
+.experience-conversion-card:hover li:nth-child(3) { transition-delay: 80ms; }
+.experience-conversion-card:hover li:nth-child(4) { transition-delay: 120ms; }
+@keyframes conversion-card-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 .phone-mockup { width: 172px; height: 350px; border: 7px solid #282828; border-radius: 26px; background: #d8d8d6; padding: 10px; position:relative; box-shadow: 0 0 0 1px #555, inset 0 0 0 1px #111; color: #161616; }
 .phone-modern { background: #efefed; }
 .phone-notch { width: 55px; height: 13px; position:absolute; top: 0; left:50%; transform:translateX(-50%); background:#282828; border-radius:0 0 10px 10px; }
@@ -124,7 +139,7 @@ footer a:hover { color: var(--background); }
 main > section:nth-of-type(2), main > section:nth-of-type(3), main > section:nth-of-type(4), main > section:nth-of-type(5), main > section:nth-of-type(7), main > section:nth-of-type(8), main > section:nth-of-type(9), main > section:nth-of-type(10), main > section:nth-of-type(13) { display: none; }
 main > section:nth-of-type(1), main > section:nth-of-type(6), main > section:nth-of-type(12), main > section:nth-of-type(14), main > section:nth-of-type(15), main > section:nth-of-type(16) { padding-top: 3rem; padding-bottom: 3rem; }
 @media (max-width: 640px) { main > section:nth-of-type(1), main > section:nth-of-type(6), main > section:nth-of-type(12), main > section:nth-of-type(14), main > section:nth-of-type(15), main > section:nth-of-type(16) { padding-top: 2rem; padding-bottom: 2rem; } }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; } .reveal-section, .reveal-section .card-glow, .reveal-section .portfolio-slot { opacity: 1 !important; transform: none !important; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; } .reveal-section, .reveal-section .card-glow, .reveal-section .portfolio-slot { opacity: 1 !important; transform: none !important; } .experience-conversion-card { animation: none !important; } .phone-float, .phone-mockup, .phone-screen::after { animation: none !important; } .phone-float:hover .phone-mockup { transform: none !important; } }
 
 /* Refinos sutis: mais ritmo, contraste e feedback sem alterar a identidade. */
 nav { transition: background .35s ease, border-color .35s ease, box-shadow .35s ease; }
