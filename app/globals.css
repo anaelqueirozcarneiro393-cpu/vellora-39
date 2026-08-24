@@ -119,3 +119,15 @@ main > section:nth-of-type(2), main > section:nth-of-type(3), main > section:nth
 main > section:nth-of-type(1), main > section:nth-of-type(6), main > section:nth-of-type(12), main > section:nth-of-type(14), main > section:nth-of-type(15), main > section:nth-of-type(16) { padding-top: 3rem; padding-bottom: 3rem; }
 @media (max-width: 640px) { main > section:nth-of-type(1), main > section:nth-of-type(6), main > section:nth-of-type(12), main > section:nth-of-type(14), main > section:nth-of-type(15), main > section:nth-of-type(16) { padding-top: 2rem; padding-bottom: 2rem; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; } .reveal-section, .reveal-section .card-glow, .reveal-section .portfolio-slot { opacity: 1 !important; transform: none !important; } }
+
+/* Refinos sutis: mais ritmo, contraste e feedback sem alterar a identidade. */
+nav { transition: background .35s ease, border-color .35s ease, box-shadow .35s ease; }
+nav > div:first-child { transition: height .35s ease; }
+.nav-scrolled > div:first-child { height: 4.5rem; }
+.btn-press { letter-spacing: .01em; }
+.btn-press:focus-visible { box-shadow: 0 0 0 4px color-mix(in oklch, var(--foreground) 16%, transparent); }
+section:not(#inicio) > div { position: relative; z-index: 1; }
+.eyebrow { transition: color .3s ease, letter-spacing .3s ease; }
+section:hover > div > .eyebrow { letter-spacing: .25em; }
+.briefing-form > button[type="submit"] { box-shadow: 0 14px 32px -22px color-mix(in oklch, var(--foreground) 60%, transparent); }
+@media (max-width: 640px) { .nav-scrolled > div:first-child { height: 4rem; } section:hover > div > .eyebrow { letter-spacing: .22em; } }
