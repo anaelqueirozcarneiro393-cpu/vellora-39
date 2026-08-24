@@ -100,6 +100,12 @@ select.form-input option:disabled { color: var(--muted-foreground); }
 #inicio .btn-press:hover svg { transform: translate(3px, -3px); }
 #portfolio .stream-card { transition: filter .35s ease; }
 #portfolio.portfolio-glow { box-shadow: inset 0 1px 0 color-mix(in oklch, var(--foreground) 10%, transparent), 0 0 70px -48px color-mix(in oklch, var(--foreground) 45%, transparent); }
+.portfolio-showcase { border-color: color-mix(in oklch, var(--foreground) 16%, var(--border)); background: linear-gradient(180deg, color-mix(in oklch, var(--foreground) 3%, transparent), transparent 42%); }
+.portfolio-showcase [role="group"] { border: 1px solid color-mix(in oklch, var(--foreground) 18%, var(--border)); border-radius: 1rem; box-shadow: 0 24px 60px -34px rgba(0,0,0,.75); }
+.portfolio-showcase img { transition: transform .7s cubic-bezier(.16,1,.3,1), filter .7s ease; }
+.portfolio-showcase [role="group"]:hover img { transform: scale(1.035); filter: saturate(1.08) contrast(1.03); }
+.portfolio-showcase [role="region"] > div:last-child { min-height: 3.25rem; }
+@media (max-width: 640px) { .portfolio-showcase [role="group"] { border-radius: .75rem; } .portfolio-showcase [role="region"] > div:last-child { min-height: 2.75rem; } }
 #portfolio.portfolio-glow h2, #portfolio.portfolio-glow > div > p { text-shadow: 0 0 28px color-mix(in oklch, var(--foreground) 18%, transparent); }
 #portfolio .stream-card:hover { filter: brightness(1.1); }
 footer a { transition: color .25s ease; }
