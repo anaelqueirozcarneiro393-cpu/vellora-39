@@ -41,6 +41,9 @@ const portfolioImages = [
   { src: '/images/portfolio-services.png', alt: 'Website profissional da Alva Arquitetura com serviços e contato', title: 'Alva Arquitetura', subtitle: 'Serviços · Posicionamento' },
   { src: '/images/portfolio-health.png', alt: 'Website da clínica de bem-estar Onda Saúde com agendamento', title: 'Onda Saúde', subtitle: 'Saúde · Agendamento' },
   { src: '/images/portfolio-realestate.png', alt: 'Website imobiliário Horizonte Imóveis com busca de propriedades', title: 'Horizonte Imóveis', subtitle: 'Imobiliário · Catálogo' },
+  { src: '/images/portfolio-education.png', alt: 'Plataforma educacional Lume Escola com catálogo de cursos', title: 'Lume Escola', subtitle: 'Educação · Plataforma' },
+  { src: '/images/portfolio-events.png', alt: 'Website do estúdio Norte Eventos para casamentos e celebrações', title: 'Norte Eventos', subtitle: 'Eventos · Experiências' },
+  { src: '/images/portfolio-finance.png', alt: 'Website de consultoria financeira Clareza Capital com planejamento patrimonial', title: 'Clareza Capital', subtitle: 'Finanças · Consultoria' },
 ]
 const faqs = [
   ['Quanto custa criar uma página?', 'Cada projeto é único e o investimento depende da solução e do nível de personalização. Conte para a gente o que você precisa e enviaremos uma proposta.'],
