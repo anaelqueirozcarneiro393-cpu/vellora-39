@@ -33,7 +33,9 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
 ::selection { background: var(--foreground); color: var(--background); }
 .eyebrow { display: inline-block; font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .22em; color: var(--muted-foreground); }
 .hero-visual { position: relative; min-height: 430px; display:flex; align-items:center; }
-.browser-mockup { width: 100%; border: 1px solid var(--border); box-shadow: 0 30px 80px -40px #000; transform: rotate(2deg); background: var(--card); }
+.browser-mockup { width: 100%; overflow: hidden; border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 30px 80px -40px #000; transform: rotate(2deg); background: var(--card); }
+.browser-mockup::before { content: ''; display: block; height: 28px; border-bottom: 1px solid var(--border); background: linear-gradient(90deg, color-mix(in oklch, var(--foreground) 8%, transparent) 0 10%, transparent 10% 100%); }
+.browser-mockup > * { margin: 0; padding: 18px 22px 26px; }
 .phone-float { position:absolute; right: -5%; bottom: -28px; filter: drop-shadow(0 25px 30px #000); transform: rotate(-7deg); animation: phone-float 5.5s ease-in-out infinite; }
   .phone-mockup { animation: phone-glow 4s ease-in-out infinite; }
   .phone-screen { position: relative; }
@@ -107,7 +109,7 @@ select.form-input option:disabled { color: var(--muted-foreground); }
 .portfolio-placeholder { transition: background-position .6s ease; }
 
 @keyframes pulse-ring { 0% { opacity:.55; transform:scale(.7); } 70% { opacity:0; transform:scale(1.9); } 100% { opacity:0; transform:scale(1.9); } }
-@media (max-width: 640px) { .briefing-form { padding: .875rem; } .phone-mockup { width:145px; height:295px; } .hero-visual { min-height:300px; } .phone-float { right:-2%; bottom:-15px; } .whatsapp-float { right:14px; bottom:74px; padding:14px; } .whatsapp-float span { display:none; } .portfolio-placeholder { height:180px; } .mobile-cta { display:block; position:fixed; z-index:40; inset:auto 0 0; padding:10px; background:color-mix(in oklch, var(--background) 90%, transparent); backdrop-filter:blur(14px); border-top:1px solid var(--border); } .mobile-cta button { min-height:48px; width:100%; display:flex; align-items:center; justify-content:center; gap:10px; border-radius:999px; background:var(--foreground); color:var(--background); font-size:13px; font-weight:600; } }
+@media (max-width: 640px) { .briefing-form { padding: .875rem; } .phone-mockup { width:145px; height:295px; } .hero-visual { min-height:300px; } .browser-mockup::before { height: 22px; } .browser-mockup > * { padding: 14px 16px 20px; } .phone-float { right:-2%; bottom:-15px; } .whatsapp-float { right:14px; bottom:74px; padding:14px; } .whatsapp-float span { display:none; } .portfolio-placeholder { height:180px; } .mobile-cta { display:block; position:fixed; z-index:40; inset:auto 0 0; padding:10px; background:color-mix(in oklch, var(--background) 90%, transparent); backdrop-filter:blur(14px); border-top:1px solid var(--border); } .mobile-cta button { min-height:48px; width:100%; display:flex; align-items:center; justify-content:center; gap:10px; border-radius:999px; background:var(--foreground); color:var(--background); font-size:13px; font-weight:600; } }
 .reveal-section { opacity: 0; transform: translateY(24px); transition: opacity .8s ease var(--reveal-delay, 0ms), transform .8s cubic-bezier(.16,1,.3,1) var(--reveal-delay, 0ms); }
 .reveal-section.is-visible { opacity: 1; transform: translateY(0); }
 .reveal-section .card-glow, .reveal-section .portfolio-slot { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s cubic-bezier(.16,1,.3,1), box-shadow .35s ease; }
@@ -135,7 +137,7 @@ footer a:hover { color: var(--background); }
 @keyframes float-mockup { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-7px) rotate(.35deg); } }
 @media (max-width: 640px) { .hero-visual { animation-duration: 8s; } .reveal-section { transform: translateY(14px); transition-duration: .6s; } .reveal-section .card-glow, .reveal-section .portfolio-slot { transform: translateY(10px); transition-duration: .5s; } .stream-card { width: 100cqw !important; height: 100cqw !important; aspect-ratio: 1; top: 40% !important; border-color: transparent !important; background: transparent !important; }
   .stream-card img { transform: scale(2) translateY(-14%); transform-origin: center center; } }
-/* Estrutura mais direta para conversão: mantém proposta, soluções, prova, processo e briefing. */
+/* Estrutura mais direta para conversão: mantém proposta, solu��ões, prova, processo e briefing. */
 main > section:nth-of-type(2), main > section:nth-of-type(3), main > section:nth-of-type(4), main > section:nth-of-type(5), main > section:nth-of-type(7), main > section:nth-of-type(8), main > section:nth-of-type(9), main > section:nth-of-type(10), main > section:nth-of-type(13) { display: none; }
 main > section:nth-of-type(1), main > section:nth-of-type(6), main > section:nth-of-type(12), main > section:nth-of-type(14), main > section:nth-of-type(15), main > section:nth-of-type(16) { padding-top: 3rem; padding-bottom: 3rem; }
 @media (max-width: 640px) { main > section:nth-of-type(1), main > section:nth-of-type(6), main > section:nth-of-type(12), main > section:nth-of-type(14), main > section:nth-of-type(15), main > section:nth-of-type(16) { padding-top: 2rem; padding-bottom: 2rem; } }
