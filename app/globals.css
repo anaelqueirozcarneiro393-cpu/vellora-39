@@ -131,3 +131,20 @@ section:not(#inicio) > div { position: relative; z-index: 1; }
 section:hover > div > .eyebrow { letter-spacing: .25em; }
 .briefing-form > button[type="submit"] { box-shadow: 0 14px 32px -22px color-mix(in oklch, var(--foreground) 60%, transparent); }
 @media (max-width: 640px) { .nav-scrolled > div:first-child { height: 4rem; } section:hover > div > .eyebrow { letter-spacing: .22em; } }
+
+/* Refinamento visual progressivo: profundidade, ritmo e estados mais claros. */
+#inicio { isolation: isolate; }
+#inicio::before { content: ''; position: absolute; inset: 18% auto auto 4%; width: min(38rem, 80vw); height: 22rem; border-radius: 50%; background: color-mix(in oklch, var(--foreground) 3%, transparent); filter: blur(70px); opacity: .55; pointer-events: none; z-index: -1; }
+#inicio > div { position: relative; }
+.browser-mockup { transition: transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s ease, border-color .35s ease; }
+.browser-mockup:hover { transform: rotate(1deg) translateY(-6px); border-color: color-mix(in oklch, var(--foreground) 28%, var(--border)); box-shadow: 0 38px 90px -40px #000; }
+section[id] > div > h2, section[id] > div > div > h2 { text-wrap: balance; }
+.card-glow { will-change: transform; }
+.card-glow::after { content: ''; position: absolute; inset: 0; pointer-events: none; border: 1px solid transparent; transition: border-color .35s ease; }
+.card-glow:hover::after { border-color: color-mix(in oklch, var(--foreground) 14%, transparent); }
+.briefing-form input, .briefing-form select, .briefing-form textarea { letter-spacing: .005em; }
+.briefing-form > button[type="submit"] { transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease, background .3s ease; }
+.briefing-form > button[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -18px color-mix(in oklch, var(--foreground) 55%, transparent); }
+footer { position: relative; }
+footer::before { content: ''; position: absolute; inset: 0 0 auto; height: 1px; background: linear-gradient(90deg, transparent, color-mix(in oklch, var(--background) 24%, transparent), transparent); }
+@media (max-width: 640px) { #inicio::before { inset: 20% auto auto -20%; width: 24rem; height: 16rem; opacity: .35; } .browser-mockup:hover { transform: rotate(1deg); } .card-glow:hover { transform: none; } }
