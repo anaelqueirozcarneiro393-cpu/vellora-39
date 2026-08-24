@@ -20,6 +20,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--background); overflow-x: hidden; }
 .hero-gradient-glow { background: linear-gradient(105deg, #a1aca8 0%, #d8e2df 42%, #a1aca8 68%, #c8d4d0 100%); background-size: 220% 100%; background-position: 0% 50%; background-clip: text; -webkit-background-clip: text; color: transparent; text-shadow: 0 0 12px color-mix(in oklch, #a1aca8 13%, transparent); filter: drop-shadow(0 0 5px color-mix(in oklch, #d8e2df 9%, transparent)); animation: hero-gradient-shift 8s ease-in-out infinite alternate; }
+.hero-gradient-glow span { line-height: 0.90em; }
 @keyframes hero-gradient-shift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
 body { position: relative; }
 body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E"); }
