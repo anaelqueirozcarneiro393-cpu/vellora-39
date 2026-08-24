@@ -33,16 +33,12 @@ const benefits = [
   ['Mais facilidade para atualizar', 'Tenha uma presença digital muito mais simples de manter.'],
 ]
 const portfolioImages = [
-  { src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=640&q=72&fm=webp', alt: 'Interface de loja digital' },
-  { src: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=640&q=72&fm=webp', alt: 'Projeto visual de marca' },
-  { src: '/images/tech-plus-homepage.png', alt: 'Homepage da TECH+, loja de celulares e acessórios em Carolina, Maranhão' },
-  { src: '/images/gaak-supplements-homepage.png', alt: 'Homepage da GAAK Supplements, marca de suplementação esportiva' },
-  { src: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=640&q=72&fm=webp', alt: 'Design de interface digital' },
-  { src: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=640&q=72&fm=webp', alt: 'Identidade visual de uma marca' },
-  { src: 'https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=640&q=72&fm=webp', alt: 'Equipe trabalhando em estratégia digital' },
-  { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Anota%C3%A7%C3%A3o%202026-08-24%20172853-cztREDQYCPjiZGYsRl19xsiczPLHs5.png', alt: 'Cardápio digital da Fornassa Cardápio, restaurante e pizzaria' },
-  { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Anota%C3%A7%C3%A3o%202026-08-24%20174726-vS860EKiZB97jpfg4R9YzCGWhHOGfC.png', alt: 'Homepage da King’s Burguer, hamburgueria artesanal com identidade visual preta e dourada', objectPosition: 'left center' },
-  { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Anota%C3%A7%C3%A3o%202026-08-24%20181953-h19qSLux68nhHDWMz36cvgOGlaXO25.png', alt: 'Landing page de hotel em Carolina, Maranhão, com piscina e reserva pelo WhatsApp' },
+  { src: '/images/portfolio-restaurant.png', alt: 'Landing page premium do restaurante Sálvia com menu e reservas' },
+  { src: '/images/portfolio-hotel.png', alt: 'Website do hotel boutique Casa Aruana com reservas e quartos' },
+  { src: '/images/portfolio-tech.png', alt: 'Website da empresa de tecnologia Nexo Cloud com produto SaaS' },
+  { src: '/images/portfolio-ecommerce.png', alt: 'E-commerce premium do Ateliê Norte com catálogo de produtos' },
+  { src: '/images/portfolio-fitness.png', alt: 'Website da marca de suplementos Fórmula 01' },
+  { src: '/images/portfolio-services.png', alt: 'Website profissional da Alva Arquitetura com serviços e contato' },
 ]
 const faqs = [
   ['Quanto custa criar uma página?', 'Cada projeto é único e o investimento depende da solução e do nível de personalização. Conte para a gente o que você precisa e enviaremos uma proposta.'],
