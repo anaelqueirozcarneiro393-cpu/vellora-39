@@ -40,7 +40,7 @@ const portfolioImages = [
   { src: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=640&q=72&fm=webp', alt: 'Design de interface digital' },
   { src: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=640&q=72&fm=webp', alt: 'Identidade visual de uma marca' },
   { src: 'https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=640&q=72&fm=webp', alt: 'Equipe trabalhando em estratégia digital' },
-  { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Anota%C3%A7%C3%A3o%202026-08-24%20171941-CHddvHzZzsPTuJrV4tEuwQGekeA60P.png', alt: 'Homepage da Pousada dos Candeeiros em Carolina, Maranhão, com piscina e ambientes acolhedores' },
+  { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Anota%C3%A7%C3%A3o%202026-08-24%20172853-cztREDQYCPjiZGYsRl19xsiczPLHs5.png', alt: 'Cardápio digital da Fornassa Cardápio, restaurante e pizzaria' },
 ]
 const faqs = [
   ['Quanto custa criar uma página?', 'Cada projeto é único e o investimento depende da solução e do nível de personalização. Conte para a gente o que você precisa e enviaremos uma proposta.'],
