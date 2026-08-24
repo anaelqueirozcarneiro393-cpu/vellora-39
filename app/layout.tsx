@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: 'Criação de landing pages, sites profissionais e experiências digitais para negócios no Brasil. Transforme sua presença online em mais confiança e oportunidades.',
   keywords: ['landing page', 'criação de sites', 'site profissional', 'presença digital', 'web design', 'site para negócios locais'],
   generator: 'Vellora',
+  verification: { google: 'nD-N9GYAPcOMDL-IYkn-yxf8jpo5co-JHe8eF9fPGV0' },
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://vellora.studio'),
   alternates: { canonical: '/' },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' } },
