@@ -41,7 +41,7 @@ const portfolioImages = [
   { src: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=640&q=72&fm=webp', alt: 'Identidade visual de uma marca' },
   { src: 'https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=640&q=72&fm=webp', alt: 'Equipe trabalhando em estratégia digital' },
   { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Anota%C3%A7%C3%A3o%202026-08-24%20172853-cztREDQYCPjiZGYsRl19xsiczPLHs5.png', alt: 'Cardápio digital da Fornassa Cardápio, restaurante e pizzaria' },
-  { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Anota%C3%A7%C3%A3o%202026-08-24%20174726-vS860EKiZB97jpfg4R9YzCGWhHOGfC.png', alt: 'Homepage da King’s Burguer, hamburgueria artesanal com identidade visual preta e dourada' },
+  { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Anota%C3%A7%C3%A3o%202026-08-24%20174726-vS860EKiZB97jpfg4R9YzCGWhHOGfC.png', alt: 'Homepage da King’s Burguer, hamburgueria artesanal com identidade visual preta e dourada', objectPosition: 'left center' },
 ]
 const faqs = [
   ['Quanto custa criar uma página?', 'Cada projeto é único e o investimento depende da solução e do nível de personalização. Conte para a gente o que você precisa e enviaremos uma proposta.'],
