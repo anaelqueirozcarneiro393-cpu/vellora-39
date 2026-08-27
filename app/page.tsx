@@ -6,7 +6,7 @@ import { Confetti, type ConfettiRef } from '@/components/ui/confetti'
 import { ArrowUpRight, Check, ChevronDown, Menu, MessageCircle, MoveRight, Sparkles, X } from 'lucide-react'
 
 const WHATSAPP_MESSAGE = 'Olá! Conheci a Vellora e gostaria de saber mais sobre a criação de uma landing page para o meu negócio.'
-const WHATSAPP_URL = `https://wa.me/SEU_NUMERO?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
+const WHATSAPP_URL = `https://wa.me/556392304946?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
 const PORTFOLIO_URL = 'SEU_LINK_DO_PORTFOLIO'
 
 const openWhatsApp = (label: string) => {
