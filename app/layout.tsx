@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: { default: 'Vellora | Landing Pages e Sites Profissionais', template: '%s | Vellora' },
-  description: 'Criação de landing pages, sites profissionais e experiências digitais para negócios no Brasil. Transforme sua presença online em mais confiança e oportunidades.',
-  keywords: ['landing page', 'criação de sites', 'site profissional', 'presença digital', 'web design', 'site para negócios locais'],
+title: { default: 'Vellora | Landing Pages and Professional Websites', template: '%s | Vellora' },
+  description: 'Creation of landing pages, professional websites, and digital experiences for businesses in Brazil.',
+  keywords: ['landing page', 'website design', 'professional website', 'digital presence', 'web design', 'local business website'],
   generator: 'Vellora',
   verification: { google: 'nD-N9GYAPcOMDL-IYkn-yxf8jpo5co-JHe8eF9fPGV0' },
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://vellora.studio'),
